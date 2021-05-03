@@ -17,7 +17,7 @@
     "event"
   ],
   "author": "Folleach",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Folleach/SocketFlow-Js/issues"
   },
