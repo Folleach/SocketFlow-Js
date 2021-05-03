@@ -1,0 +1,25 @@
+{
+  "name": "socketflow.client",
+  "version": "0.1.0",
+  "description": "An event-oriented protocol",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Folleach/SocketFlow-Js.git"
+  },
+  "keywords": [
+    "network",
+    "socket",
+    "flow",
+    "event"
+  ],
+  "author": "Folleach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Folleach/SocketFlow-Js/issues"
+  },
+  "homepage": "https://github.com/Folleach/SocketFlow-Js#readme"
+}
