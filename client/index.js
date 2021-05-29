@@ -16,7 +16,7 @@ export class Client {
             new Response(event.data).arrayBuffer()
             .then(arrayBuffer => {
                 let head = new Int32Array(arrayBuffer, 0, 2);
-                let scId = head[0];
+                let scId = head[1];
                 let handler = this.handlers.get(scId);
                 let data = new Uint8Array(arrayBuffer, HeadLength, arrayBuffer.byteLength - HeadLength);
                 handler(this.dataWrapper.formatRaw(data));
@@ -49,8 +49,8 @@ export class Client {
     send(csId, value) {
         const data = this.dataWrapper.formatObject(value);
         const result = new Int32Array(2);
-        result[0] = Number(csId);
-        result[1] = data.length;
+        result[1] = Number(csId);
+        result[0] = data.length;
         if (this.socket.readyState == this.socket.OPEN) {
             this.socket.send(result);
             this.socket.send(data);
