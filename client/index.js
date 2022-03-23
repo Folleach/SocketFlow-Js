@@ -48,15 +48,15 @@ export class Client {
 
     send(csId, value) {
         const data = this.dataWrapper.formatObject(value);
-        const result = new Int32Array(2);
-        result[1] = Number(csId);
-        result[0] = data.length;
+        const head = new Int32Array(2);
+        head[1] = Number(csId);
+        head[0] = data.length;
         if (this.socket.readyState == this.socket.OPEN) {
-            this.socket.send(result);
+            this.socket.send(head);
             this.socket.send(data);
             return;
         }
-        this.addMessage(result, data);
+        this.addMessage(head, data);
     }
 }
 
